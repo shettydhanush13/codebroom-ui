@@ -107,9 +107,9 @@ const Results = () => {
             <br />
             <IssueList className='results__issueList' type={data.file ? 'file' : 'repo'} issues={data.issues} />
           </div>
-          <div className="results__charts">
+          {data.repo && <div className="results__charts">
             <FileIssuesBarChart issues={data.issues} />
-          </div>
+          </div>}
         </div>
       </div>
       <Footer />
