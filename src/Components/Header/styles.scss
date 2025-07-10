@@ -9,6 +9,7 @@
   border-bottom: 2px solid $neon-blue;
   box-shadow: 0 0 15px $neon-blue-light;
   font-family: $font-family-mono;
+  z-index: 100;
 
   .logo_wrapper {
     height: 50px;

@@ -75,7 +75,7 @@ const Home = () => {
         </section>
 
         <section className="home__footer">
-          <p className="home__tagline">Crafting cleaner code, one scan at a time 🧹✨</p>
+          <p className="home__tagline">✨ Crafting cleaner code, one scan at a time ✨</p>
         </section>
       </div>
       <Footer />
