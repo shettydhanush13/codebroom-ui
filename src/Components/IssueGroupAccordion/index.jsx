@@ -3,6 +3,7 @@ import './styles.scss';
 
 export default function IssueGroupAccordion({ type, issues, icon }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [showSolution, setShowSolution] = useState(false);
 
   const getSeverityBadge = (level, count) => {
     if (level === 3) {
@@ -63,14 +64,14 @@ export default function IssueGroupAccordion({ type, issues, icon }) {
                 </pre>
               )}
 
-              {/* <div className="issue-list-btn-container">
+              <div className="issue-list-btn-container">
                 <button
                   className="issue-list__solution-btn"
                   onClick={() => setShowSolution(showSolution === i ? null : i)}
                 >
                   🤖 Fix Suggestion
                 </button>
-                <button 
+                {/* <button 
                     className="issue-list__solution-btn" 
                     onClick={() => {}}
                 >
@@ -87,14 +88,14 @@ export default function IssueGroupAccordion({ type, issues, icon }) {
                     onClick={() => {}}
                 >
                 📖 Learn
-                </button>
-              </div> */}
+                </button> */}
+              </div>
 
-              {/* {showSolution === i && (
+              {showSolution === i && (
                 <div className="issue-list__solution">
-                  🤖 Our AI-powered quick fix suggestions are on the way. Stay tuned!
+                  <button>Login</button> to generate AI powered solution!
                 </div>
-              )} */}
+              )}
             </li>
           ))}
         </ul>

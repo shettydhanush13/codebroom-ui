@@ -16,20 +16,24 @@
     margin-bottom: 0rem;
 
     .home__title {
-      font-size: 3rem;
+      font-size: 2rem;
       color: $neon-blue;
       text-shadow: $glow-shadow;
       transition: transform $transition-fast;
     }
 
     .home__subtitle {
-      font-size: 2.4rem;
+      font-size: 1.75rem;
       font-weight: 900;
       color: #fff;
       margin-top: 0.5rem;
-      max-width: 900px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .home__prompt {
+      margin: 0;
     }
   }
 

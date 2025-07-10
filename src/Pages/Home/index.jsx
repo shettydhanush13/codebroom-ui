@@ -11,7 +11,7 @@ const Home = () => {
 
   const handleAnalyze = (path, token) => {
     if (mode === 'file') {
-      navigate(`/results?filePath=${encodeURIComponent(path)}`);
+      navigate(`/results?filePath=${encodeURIComponent(path)}&token=${encodeURIComponent(token || '')}`);
     } else {
       navigate(`/results?repoPath=${encodeURIComponent(path)}&token=${encodeURIComponent(token || '')}`);
     }
@@ -27,10 +27,17 @@ const Home = () => {
         <div className="grid-lines"></div>
       </div>
         <header className="home__header">
+          <p className="home__title">
+            Clean up your codebase with AI-powered insights.
+          </p>
           <p className="home__subtitle">
-            Analyze your JavaScript & TypeScript code for technical debt, complexity, and maintainability.
+            CodeBroom analyzes your repositories, uncovers hidden issues, and helps you keep your code clean, fast, and maintainable.
           </p>
         </header>
+
+        <p className="home__prompt">
+          Paste your repo/file URL below to get your <b>FREE</b> code hygiene report.
+        </p>
 
         <div className="home__options">
           <button
