@@ -3,7 +3,6 @@ import './styles.scss';
 
 export default function IssueGroupAccordion({ type, issues, icon }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [showSolution, setShowSolution] = useState(null);
 
   const getSeverityBadge = (level, count) => {
     if (level === 3) {
