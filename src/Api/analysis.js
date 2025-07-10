@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// const url = 'https://codebroom-api.onrender.com';
-const url = 'http://localhost:3001';
+const url = 'https://codebroom-api.onrender.com';
+// const url = 'http://localhost:3001';
 
 export const analyzeRepo = async (payload) => {
   const res = await axios.post(`${url}/analysis/repo`, payload);
