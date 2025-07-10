@@ -1,0 +1,123 @@
+@import '../../variables.scss'; // adjust if your path differs
+
+.footer {
+  background: $dark-bg;
+  color: $text-color;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: $font-family-mono;
+
+  &__columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  &__brand {
+    flex: 1 1 200px;
+    padding: 1rem 0;
+    h2 {
+      color: $neon-blue;
+      margin: 0.5rem 0.25rem;
+    }
+    p {
+      color: $text-muted;
+    }
+  }
+
+  &__links {
+    flex: 1 1 150px;
+    h4 {
+      margin-bottom: 0.5rem;
+      color: $neon-blue-light;
+    }
+    a {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: $text-color;
+      text-decoration: none;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $neon-green;
+      }
+    }
+  }
+
+  &__newsletter {
+    flex: 1 1 250px;
+
+    h4 {
+      margin-bottom: 0.5rem;
+      color: $neon-blue-light;
+    }
+    form {
+      display: flex;
+      margin-bottom: 0.5rem;
+
+      input {
+        flex: 1;
+        padding: 0.5rem;
+        border: 1px solid $neon-blue;
+        background: $dark-bg-alt;
+        color: $text-color;
+        outline: none;
+        border-radius: $border-radius-sm 0 0 $border-radius-sm;
+      }
+
+      button {
+        background: $neon-blue;
+        color: $dark-bg;
+        border: none;
+        padding: 0 1rem;
+        border-radius: 0 $border-radius-sm $border-radius-sm 0;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background $transition-fast;
+
+        &:hover {
+          background: $neon-green;
+        }
+      }
+    }
+
+    small {
+      color: $text-muted;
+      a {
+        color: $neon-green;
+      }
+    }
+
+    .footer__social {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 0.5rem;
+
+      a {
+        color: $text-color;
+        font-size: 1.4rem;
+        transition: color $transition-fast;
+
+        &:hover {
+          color: $neon-blue;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: $text-muted;
+  }
+
+  .logo_wrapper {
+    display: flex;
+    align-items: center;
+  }
+}

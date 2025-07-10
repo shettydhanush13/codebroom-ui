@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import '../../variables.scss';
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px #00ffff88;
+  }
+  50% {
+    box-shadow: 0 0 16px #00ffffcc;
+  }
+}
+
+@keyframes blinkCursor {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes matrixScroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.issue-list {
+  position: relative;
+  overflow: hidden;
+  font-family: 'Fira Code', monospace;
+  color: #e0e6f3;
+  background: $dark-bg;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid $neon-blue;
+  box-shadow: 0 0 12px $neon-blue, inset 0 0 15px rgba(102, 255, 255, 0.3);
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.06;
+    background:
+      linear-gradient(to right, #00ffff22 1px, transparent 1px),
+      linear-gradient(to bottom, #00ffff22 1px, transparent 1px);
+    background-size: 30px 30px;
+    z-index: 0;
+  }
+
+  &::after {
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        #00ffff33 0,
+        #00ffff33 2px,
+        transparent 2px,
+        transparent 8px
+      );
+    animation: matrixScroll 8s linear infinite;
+    opacity: 0.03;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #0ff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 6px #00ffff;
+
+    .blinking-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 20px;
+      background-color: #00ffff;
+      margin-left: 6px;
+      animation: blinkCursor 1.2s steps(1) infinite;
+      border-radius: 2px;
+      vertical-align: bottom;
+    }
+  }
+
+  &__group {
+    margin-bottom: 0.5rem;
+    padding: 0rem;
+    background: #141c2e;
+    border-radius: 10px;
+    border: 1px solid #00ffff88;
+    box-shadow: inset 0 0 12px #00f0ff44;
+    position: relative;
+    z-index: 1;
+
+    h4 {
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      color: #00eaff;
+      text-shadow: 0 0 4px #00dfff;
+      user-select: none;
+
+      &::after {
+        content: '';
+        flex-grow: 1;
+        margin-left: 1rem;
+        border-bottom: 1px solid #00eaff44;
+        box-shadow: 0 0 6px #00eaff55;
+      }
+    }
+
+    .issue-list__count {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #66ffff;
+      margin-left: 0.5rem;
+    }
+
+    .issue-list__icon {
+      font-size: 1.4rem;
+      margin-right: 0.6rem;
+      user-select: none;
+      filter: drop-shadow(0 0 1px #00ffffbb);
+    }
+    .issue-type {
+      display: flex;
+      justify-content: space-between;
+      width: 95%;
+      .issue-list__group-category {
+        font-size: 14px;
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+
+    .issue-list__item {
+      position: relative;
+      background: #081222;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #00ffff;
+      box-shadow:
+        0 0 6px #00ffffaa,
+        inset 0 0 10px #00ffff33;
+      cursor: default;
+      transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+      .issue-list__name {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: #22ffff;
+        margin-bottom: 0.3rem;
+        text-shadow: 0 0 5px #00ffffaa;
+        display: flex;
+        align-items: center;
+        user-select: text;
+
+        .blinking-cursor {
+          display: inline-block;
+          width: 8px;
+          height: 20px;
+          background-color: #00ffff;
+          margin-left: 6px;
+          animation: blinkCursor 1.2s steps(1) infinite;
+          border-radius: 2px;
+          vertical-align: bottom;
+          user-select: none;
+        }
+      }
+
+      .issue-list__message {
+        font-size: 1rem;
+        line-height: 1.4;
+        color: #a0d8f7;
+        font-style: italic;
+        margin-bottom: 0.4rem;
+        white-space: pre-wrap;
+      }
+
+      .issue-list__location {
+        font-size: 0.85rem;
+        color: #66ffffaa;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.8rem;
+      }
+
+      .issue-list-btn-container {
+        display: flex;
+        justify-content: left;
+      }
+
+      .issue-list__solution-btn {
+        background: transparent;
+        border: 1.5px solid #00ffff;
+        color: #00ffff;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        user-select: none;
+        margin-right: 10px;
+
+        &:hover {
+          background: #00ffff22;
+          color: #00eaff;
+          animation: none;
+          box-shadow: 0 0 20px #00ffffdd;
+        }
+      }
+
+      .issue-list__solution {
+        margin-top: 0.6rem;
+        padding: 0.6rem 1rem;
+        background: #002233;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-family: 'Fira Code', monospace;
+        color: #66ffff;
+        box-shadow: inset 0 0 10px #00ffffaa;
+        white-space: pre-line;
+        user-select: none;
+      }
+
+      .code-snippet {
+        background: rgba(0, 0, 0, 0.9);
+        color: #00ff99;
+        padding: 1rem;
+        border-radius: 6px;
+        overflow-x: auto;
+        font-family: 'Fira Code', monospace;
+        margin-bottom: 0.5rem;
+        max-height: 300px;
+      }
+    }
+  }
+  .issue-list-filename {
+    margin-bottom: 0.5rem;
+  }
+}

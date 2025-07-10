@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+// Core brand colors
+$neon-blue: #00ffff;
+$neon-blue-light: #66ffff;
+$neon-purple: #8a2be2; // optional accent
+$neon-green: #39ff14; // optional accent
+
+// Backgrounds
+$dark-bg: #0a0f1a;
+$dark-bg-alt: #141c2e;
+$dark-bg-gradient: linear-gradient(145deg, $dark-bg, $dark-bg-alt);
+
+// Text & glow
+$font-family-mono: 'Fira Code', monospace;
+$text-color: #f0f0f0;
+$text-muted: #aaaaaa;
+$glow-color: $neon-blue;
+$glow-shadow: 0 0 5px $glow-color, 0 0 10px $glow-color, 0 0 20px $glow-color;
+
+// Shadows & borders
+$box-shadow-glow: 0 0 15px rgba(0, 255, 255, 0.3);
+$border-radius-lg: 1rem;
+$border-radius-sm: 0.5rem;
+
+// Transitions
+$transition-fast: 0.2s ease-in-out;
+$transition-slow: 0.4s ease-in-out;
+
+// Cards or section backgrounds
+$glass-bg: rgba(255, 255, 255, 0.02);
+$glass-blur: blur(8px);

@@ -1,0 +1,218 @@
+@import '../../variables'; // adjust path if needed
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+  height: fit-content;
+  box-sizing: border-box;
+  background: $dark-bg-gradient;
+  color: $text-color;
+  font-family: $font-family-mono;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 0rem;
+
+    .home__title {
+      font-size: 3rem;
+      color: $neon-blue;
+      text-shadow: $glow-shadow;
+      transition: transform $transition-fast;
+    }
+
+    .home__subtitle {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #fff;
+      margin-top: 0.5rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__form-section {
+    width: 100%;
+    max-width: 700px;
+    background: $glass-bg;
+    backdrop-filter: $glass-blur;
+    margin: 2rem;
+    border-radius: $border-radius-lg;
+    transition: box-shadow $transition-fast, transform $transition-fast;
+  }
+
+  &__footer {
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.9rem;
+    color: $text-muted;
+
+    .home__tagline {
+      margin-top: 2rem;
+      color: $neon-blue;
+      opacity: 0.7;
+      text-shadow: 0 0 5px $neon-blue;
+    }
+  }
+
+  .home__options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0 0;
+  
+    .home__option-button {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid $neon-blue;
+      padding: 0.6rem 1.5rem;
+      border-radius: $border-radius-sm;
+      color: $text-color;
+      cursor: pointer;
+      transition: all $transition-fast;
+      font-family: $font-family-mono;
+  
+      &.active {
+        background: $neon-blue-light;
+        color: $dark-bg;
+      }
+  
+      &:hover:not(.active) {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }  
+
+  .home__features {
+    margin: 0;
+    text-align: center;
+    max-width: 700px;
+  
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 2rem;
+      text-align: center;
+      max-width: 600px;
+  
+      li {
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+        position: relative;
+        padding-left: 1.5rem;
+        color: #fff;
+
+      }
+    }
+  
+    .home__badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1rem;
+  
+      .badge {
+        background: $neon-blue-light;
+        color: $dark-bg;
+        padding: 0.4rem 1rem;
+        border-radius: 20px;
+        font-family: $font-family-mono;
+        font-size: 0.9rem;
+        box-shadow: 0 0 8px $neon-blue;
+  
+        &:hover {
+          box-shadow: 0 0 15px $neon-blue;
+        }
+      }
+    }
+  }
+
+  .home__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; // Keep background behind
+    pointer-events: none; // ⬅️ this line fixes it!
+  
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.2;
+      background: $neon-blue-light;
+      filter: blur(80px);
+      animation: floatCircle 12s infinite ease-in-out alternate;
+  
+      &.circle1 {
+        width: 300px;
+        height: 300px;
+        top: 10%;
+        left: 20%;
+      }
+  
+      &.circle2 {
+        width: 400px;
+        height: 400px;
+        bottom: 10%;
+        right: 15%;
+      }
+    }
+  
+    .grid-lines {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: repeating-linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.03) 0,
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 1px,
+          transparent 50px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.03) 0,
+          rgba(255, 255, 255, 0.03) 1px,
+          transparent 1px,
+          transparent 50px
+        );
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      animation: gridMove 30s linear infinite;
+    }
+  }
+  
+  @keyframes floatCircle {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    100% {
+      transform: translateY(-20px) translateX(20px);
+    }
+  }
+  
+  @keyframes gridMove {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }  
+}
+
+// Optional: global neon text style if you want to reuse elsewhere
+.neon-text {
+  color: $neon-blue;
+  text-shadow: $glow-shadow;
+}

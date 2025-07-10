@@ -1,0 +1,76 @@
+@import '../../variables.scss';
+
+.score-card {
+  font-family: $font-family-mono;
+  background: $dark-bg;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  color: $neon-blue-light;
+  border: 1px solid $neon-blue;
+  box-shadow: 0 0 12px $neon-blue, inset 0 0 15px rgba(102, 255, 255, 0.3);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .score {
+    font-size: 4rem;
+    font-weight: 900;
+    color: $neon-blue;
+    text-shadow: 0 0 12px $neon-blue;
+  }
+
+  .grade {
+    font-size: 1.5rem;
+    margin-top: 0.3rem;
+    font-weight: 700;
+    color: $neon-blue-light;
+    text-shadow: 0 0 8px $neon-blue-light;
+  }
+
+  p {
+    margin: 1rem 0 0.5rem;
+    font-size: 1.2rem;
+    color: $neon-blue-light;
+  }
+
+  .priority {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+
+    .badge {
+      padding: 0.3rem 0.8rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      background: transparent;
+      border: 1px solid $neon-blue;
+      color: $neon-blue-light;
+      text-shadow: 0 0 6px $neon-blue-light;
+      transition: background $transition-fast, color $transition-fast;
+
+      &.high {
+        border-color: #ff3b3b;
+        color: #ff3b3b;
+        text-shadow: 0 0 6px #ff3b3b;
+      }
+      &.medium {
+        border-color: #ffc107;
+        color: #ffc107;
+        text-shadow: 0 0 6px #ffc107;
+      }
+      &.low {
+        border-color: #00ff7f;
+        color: #00ff7f;
+        text-shadow: 0 0 6px #00ff7f;
+      }
+
+      &:hover {
+        background: rgba($neon-blue, 0.1);
+      }
+    }
+  }
+}
