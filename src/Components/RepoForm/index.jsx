@@ -23,9 +23,8 @@ const RepoForm = ({ onAnalyze, mode }) => {
           required
         />
       </div>
-
+      <br />
       <div className="repo-form__group">
-        <br />
         <div className="repo-form__token-label">
           <label>Access Token (for Private Repo):</label>
           <button

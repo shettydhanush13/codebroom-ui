@@ -10,11 +10,9 @@ const Home = () => {
   const [mode, setMode] = useState('repo');
 
   const handleAnalyze = (path, token) => {
-    if (mode === 'file') {
-      navigate(`/results?filePath=${encodeURIComponent(path)}&token=${encodeURIComponent(token || '')}`);
-    } else {
-      navigate(`/results?repoPath=${encodeURIComponent(path)}&token=${encodeURIComponent(token || '')}`);
-    }
+    const route = 'repoPath';
+    if (mode === 'file') route = 'filePath';
+    navigate(`/results?${route}=${encodeURIComponent(path)}&token=${encodeURIComponent(token || '')}`);
   };
 
   return (
