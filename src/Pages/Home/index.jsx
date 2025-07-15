@@ -10,7 +10,7 @@ const Home = () => {
   const [mode, setMode] = useState('repo');
 
   const handleAnalyze = (path, token) => {
-    const route = 'repoPath';
+    let route = 'repoPath';
     if (mode === 'file') route = 'filePath';
     navigate(`/results?${route}=${encodeURIComponent(path)}&token=${encodeURIComponent(token || '')}`);
   };
@@ -50,6 +50,12 @@ const Home = () => {
           >
             Scan File
           </button>
+          <button
+            className={`home__option-button ${mode === 'login' ? 'active' : ''}`}
+            onClick={() => navigate('/login')}
+          >
+            Connect your Repo
+          </button>
         </div>
 
         <section className="home__form-section">
@@ -70,6 +76,17 @@ const Home = () => {
             <span className="badge">Complexity Score</span>
             <span className="badge">Security Hints</span>
           </div>
+        </section>
+        <br />
+        <br />
+        <section className="home__features">
+          <h2 className="neon-text">What Developers Say</h2>
+          <blockquote>
+            "CodeBroom helped me identify critical code smells I never noticed before. Highly recommend!" — Jane D., Frontend Engineer
+          </blockquote>
+          <blockquote>
+            "The actionable suggestions saved our team hours in code reviews." — Raj P., Full Stack Developer
+          </blockquote>
         </section>
 
         <section className="home__footer">

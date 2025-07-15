@@ -22,7 +22,7 @@ const Header = () => {
       </nav>
       <nav className="nav-links login_button">
         <NavLink to="/login">
-          Login to sync your repos
+          Login to connect your repos
         </NavLink>
       </nav>
     </header>

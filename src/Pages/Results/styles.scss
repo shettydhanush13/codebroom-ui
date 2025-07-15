@@ -9,9 +9,10 @@
   background-color: $dark-bg;
   .results__content {
     display: flex;
+    justify-content: center;
     gap: 1.5rem;
     .results__issues {
-      width: 60%;
+      width: 70%;
     }
     .results__charts {
       width: 40%;

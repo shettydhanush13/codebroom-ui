@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { analyzeRepo, analyzeFile } from '../../Api/analysis';
 import ScoreCard from '../../Components/ScoreCard';
-import FileIssuesBarChart from '../../Components/ChartSummary/FileIssue';
+// import FileIssuesBarChart from '../../Components/ChartSummary/FileIssue';
 import IssueList from '../../Components/IssueList';
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
@@ -107,9 +107,9 @@ const Results = () => {
             <br />
             <IssueList className='results__issueList' type={data.file ? 'file' : 'repo'} issues={data.issues} />
           </div>
-          {data.repo && <div className="results__charts">
+          {/* {data.repo && <div className="results__charts">
             <FileIssuesBarChart issues={data.issues} />
-          </div>}
+          </div>} */}
         </div>
       </div>
       <Footer />

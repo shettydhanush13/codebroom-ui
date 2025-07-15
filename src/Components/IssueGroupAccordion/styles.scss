@@ -42,7 +42,8 @@
       border-radius: 0 0 10px 10px;
   
       &.open {
-        max-height: 2000px; // big enough to show all
+        max-height: 5000px; // big enough to show all
+        overflow-y: scroll;
         padding: 0.5rem 1rem;
       }
   

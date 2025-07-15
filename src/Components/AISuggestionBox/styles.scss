@@ -1,0 +1,92 @@
+@import '../../variables.scss';
+
+.ai-suggestion-card {
+  background: $dark-bg-alt;
+  border: 1px solid $neon-blue;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  color: $neon-blue-light;
+  font-family: $font-family-mono;
+  box-shadow: $box-shadow-glow;
+  overflow: auto; 
+
+  h3.ai-suggestion-title {
+    margin-top: 0;
+    color: $neon-blue;
+  }
+
+  .ai-suggestion-description {
+    margin-bottom: 1rem;
+    color: $text-color;
+  }
+
+  .ai-suggestion-section {
+    margin-bottom: 1rem;
+
+    h4 {
+      color: $neon-green;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 1rem;
+  
+        li {
+          margin-bottom: 1rem;
+          line-height: 1.2;
+          color: #f0f0f0;
+        }
+      }
+  }
+
+  .ai-suggestion-code {
+    border: 1px solid #66ffff;
+    padding: 0.75rem;
+    border-radius: 5px;
+    color: #f0f0f0;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .code-copy-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.3rem;
+  }
+  
+  .copy-button {
+    background: transparent;
+    border: 1px solid #00ffffaa;
+    color: #00ffff;
+    padding: 4px 10px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  
+    &:hover {
+      background: #00ffff22;
+    }
+  }
+
+
+  .typing-text {
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .ai-suggestion-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #00ffff;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  
+}

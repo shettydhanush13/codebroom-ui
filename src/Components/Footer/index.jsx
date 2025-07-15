@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer__brand">
           <div className="logo_wrapper">
             <img src={logo} alt="" />
-            <h2>CodeBroom</h2>
+            <h2>CodeBroom.dev</h2>
           </div>
           <p>Built for modern developers, with love and neon vibes 💙💜</p>
         </div>
@@ -21,12 +21,10 @@ const Footer = () => {
           <a href="/about">About</a>
           <a href="/features">Features</a>
           <a href="/docs">Docs</a>
-          <a href="/status">System Status</a>
         </div>
 
         <div className="footer__links">
           <h4>Resources</h4>
-          <a href="/blog">Blog</a>
           <a href="/changelog">Changelog</a>
           <a href="/careers">Careers</a>
           <a href="/security">Security</a>
@@ -55,7 +53,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__bottom">
-        <p>© 2025 CodeBroom. Crafted with ⚡ and ☕ for developers.</p>
+        <p>© 2025 CodeBroom.dev Crafted with ⚡ and ☕ for developers.</p>
       </div>
     </footer>
   );

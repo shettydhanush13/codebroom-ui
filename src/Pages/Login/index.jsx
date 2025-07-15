@@ -14,16 +14,16 @@ const LoginPage = () => {
             </div>
             <br />
             <div className="login-page__options">
-                <button className="login-btn">
+                <button className="login-btn" onClick={() => alert('COMING SOON')}>
                 <i className="fab fa-github"></i> Login with GitHub
                 </button>
-                <button className="login-btn">
+                <button className="login-btn" onClick={() => alert('COMING SOON')}>
                 <i className="fab fa-gitlab"></i> Login with GitLab
                 </button>
-                <button className="login-btn">
+                <button className="login-btn" onClick={() => alert('COMING SOON')}>
                 <i className="fab fa-microsoft"></i> Login with Azure DevOps
                 </button>
-                <button className="login-btn">
+                <button className="login-btn" onClick={() => alert('COMING SOON')}>
                 <i className="fab fa-bitbucket"></i> Login with Bitbucket Cloud
                 </button>
             </div>
